@@ -1,0 +1,5 @@
+the method is GET
+the path is /
+
+the method is GET
+the path is /
