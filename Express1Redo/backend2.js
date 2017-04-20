@@ -5,19 +5,33 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-  res.send("HOME")})
+  var string = "HOME"
+  res.render('homepage1.hbs', {
+    homeKey : string
+  })
+})
 
 app.get('/inkling_girl', (req,res) => {
-  res.send("Woomy!");
+  var string = "woomy"
+  res.render('woomy.hbs', {
+    woomyKey : string
+  })
 })
 
 app.get('/inkling_boy', (req,res) => {
-  res.send("Ngyes!");
+  var string = "Ngyes"
+  res.render('ngyes.hbs', {
+    ngyesKey : string
+  })
 })
 
 app.get('/splatoon2',(req, res) => {
-  res.send("releasing in July!!!")
+  var string = "releasing in July!!!"
+  res.render('release.hbs', {
+    julyKey : string
+  })
 })
+
 app.listen(3000, () => {
   console.log("listening at port 3000")
 })

@@ -4,19 +4,27 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req,res) => {
-  res.send("uwu");
+  var uwu = "uwu"
+  res.render('homepage2.hbs', {
+    uwuKey : uwu
+  })
 })
 
 app.get('/hello', (req,res) => {
-  res.send("hello");
+  var hello = "henlo"
+  res.render('hello1.hbs' , {
+    helloKey : hello
+  })
 })
 
 //http://localhost:3000/hello/carl
 //mispell params and it will serve as your string instead x.x
 app.get('/hello/:name', (req, res) => {
   var name = req.params.name || 'world'
-  res.send('Hello '+ name + '!');
-});
+  res.render('helloName.hbs', {
+    hiyaPerson : `Hello ${name}! How are you?`
+  })
+})
 
 app.listen(3000, () => {
   console.log('listening at port 3000')
